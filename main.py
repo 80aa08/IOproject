@@ -19,7 +19,7 @@ class UpdateItem(BaseModel):
     brand: Optional[str] = None
 
 
-inventory = inventory = {
+inventory = {
     "1": {"name": "Random Item 1", "price": 8.69, "brand": "Brand C"},
     "2": {"name": "Random Item 2", "price": 43.09, "brand": "Brand A"},
     "3": {"name": "Random Item 3", "price": 28.27, "brand": "Brand B"},
@@ -75,7 +75,7 @@ def get_item_by_name(name: str):
     return found_items
 
 
-@app.post("/create-item/")
+@app.post("/create-item")
 def create_item(item: Item):
     global current_item_id
     inventory[current_item_id] = item
